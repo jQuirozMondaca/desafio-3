@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60px 60px 1fr 60px;
+    grid-template-areas:
+        "navbar"
+        "filter"
+        "producto"
+        "footer"
+    ;
+}
+
+.logo,
+.hamburguesa {
+    width: 30px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: blue;
+    align-items: center;
+    color: bisque;
+    grid-area: navbar;
+}
+
+.section ul {
+    display: none;
+}
+
+.container-logo {
+    display: flex;
+    gap: 10px;
+}
+
+.filter {
+    grid-area: filter;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.main-section {
+    grid-area: producto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ececec;
+    width: 280px;
+    padding: 35px 0px;
+    gap: 15px;
+    border-radius: 3px;
+}
+
+.img-card {
+    width: 250px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: blue;
+    color: bisque;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navegation {
+    display: flex;
+}
+
+.navegation>button {
+    width: 30px;
+    height: 30px;
+    color: blue;
+
+}
+
+footer>div>img {
+    width: 20px;
+}
+
+@media (min-width: 576px) {
+    .container {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 60px 1fr 60px;
+        grid-template-areas:
+            "navbar filter"
+            "navbar producto"
+            "footer producto"
+        ;
+    }
+
+    .container-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+
+    .section ul {
+        display: block;
+    }
+
+    .filter>select {
+        width: 100%;
+        padding: 5px;
+        text-align: center;
+    }
+}
